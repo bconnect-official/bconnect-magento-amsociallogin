@@ -1,0 +1,45 @@
+/**
+* @author  Agence Dn'D <contact@dnd.fr>
+* @license https://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+* @link    https://www.dnd.fr/
+*/
+
+//
+//  Variables
+//  _____________________________________________
+@amsl-bconnect-button__background: #fff;
+@amsl-bconnect-button__rectangle__background: #fe5606;
+@amsl-bconnect-icon__background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCA4MC4xMiA4MC4xMyI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7fS5jbHMtMSwuY2xzLTJ7c3Ryb2tlLXdpZHRoOjBweDt9LmNscy0ye2ZpbGw6dXJsKCNOb3V2ZWxsZV9udWFuY2VfZGVfZMOpZ3JhZMOpXzIpO308L3N0eWxlPjxsaW5lYXJHcmFkaWVudCBpZD0iTm91dmVsbGVfbnVhbmNlX2RlX2TDqWdyYWTDqV8yIiB4MT0iMTEuNzQiIHkxPSItMzQ4LjM4IiB4Mj0iNzguMTYiIHkyPSItMjgxLjk2IiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTI4MCkgc2NhbGUoMSAtMSkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjAyNTQiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZjViMDAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48Zz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik00MC4wNywwaDMzLjM3YzMuNjksMCw2LjY3LDMsNi42Nyw2LjY5djMzLjM3YzAsMjIuMS0xNy45NSw0MC4wNy00MC4wNyw0MC4wN2gwYy0yMi4xLS4wMi00MC4wNS0xNy45Ni00MC4wNS00MC4wN2gwQzAsMTcuOTUsMTcuOTUsMCw0MC4wNywwWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQwLjEyLDY0Yy0xMS43NiwwLTIxLjQzLTcuNTEtMjMuNzctMTkuMDYtMi41OC0xMi43Miw1LjczLTI1LjU4LDE4LjQyLTI4LjQ5LDIuNS0uNTcsNC44Ni44OCw1LjQ2LDMuMzYuNTgsMi4zNy0uODgsNC42Ni0zLjUxLDUuMzYtNS4yNiwxLjQtOC45Niw0LjU2LTEwLjksOS42NS0zLjEzLDguMjUsMS4zOCwxNy41OSw5LjcxLDIwLjI0LDguNTMsMi43LDE3LjQ4LTIuMTgsMTkuODEtMTAuNzguNzYtMi44NCwyLjgzLTQuMzksNS4yNS0zLjk1LDIuNTUuNDUsNC4xMywyLjg3LDMuNjQsNS40Mi0xLjQyLDcuNDItOS4xMSwxOC4yNS0yNC4xMSwxOC4yNVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00MC4zNSw0Ni4wNmMtMy4yNSwwLTUuNjgtMi4zMi01Ljc1LTUuNTEtLjA2LTMuNDEsMi4yMS02LjA2LDUuNDktNi4wNyw0Ljg3LDAsOS41Ny00LjI3LDkuNy05LjcxLjA4LTIuOTksMi4zNy01LjMxLDUuMTgtNS41MiwzLjEtLjIzLDUuNzUsMS42OSw2LjM1LDQuNi42MiwyLjk3LTEuMDEsNS44NS0zLjkxLDYuNzctLjgxLjI2LTEuNzIuMjYtMi41OC4zNy00Ljk1LjY4LTguNDMsNC40Ny04LjY0LDkuNDUtLjEzLDMuMjgtMi41Nyw1LjYtNS44NSw1LjYyaC4wMloiLz48L2c+PC9zdmc+Cg==);
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .amsl-social-login {
+        .amsl-button.-bconnect {
+            & {
+                background: @amsl-bconnect-button__background;
+            }
+
+            .amsl-social-icon {
+                background-image: @amsl-bconnect-icon__background;
+                background-size: contain;
+            }
+
+            &:hover {
+                background: lighten(@amsl-bconnect-button__background, 10%);
+            }
+        }
+
+        .amsl-button-wrapper.with-label.-rectangular {
+            .amsl-button.-bconnect {
+                background: @amsl-bconnect-button__rectangle__background;
+
+                &:hover {
+                    background: lighten(@amsl-bconnect-button__rectangle__background, 10%);
+                }
+            }
+        }
+    }
+}

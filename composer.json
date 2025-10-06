@@ -1,0 +1,20 @@
+{
+    "name": "bconnect-official/bconnect-magento-amsociallogin",
+    "description": "Bconnect module for Amasty social login Magento 2",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "*",
+        "amasty/social-login": "1.12.7"
+    },
+    "license": [
+        "Proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Bconnect\\Amsociallogin\\": ""
+        }
+    }
+}
