@@ -18,4 +18,8 @@
         <plugin name="bconnect_remove_additional_param_from_call_back"
                 type="Bconnect\Amsociallogin\Plugin\RemoveAdditionalParamFromCallBack"/>
     </type>
+    <type name="Amasty\SocialLogin\Model\Login">
+        <plugin name="bconnect_redirect_on_account_when_mobile_referer"
+                type="Bconnect\Amsociallogin\Plugin\LoginRedirectWhenAppReferer"/>
+    </type>
 </config>
