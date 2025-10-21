@@ -25,9 +25,10 @@ class LoginRedirectWhenAppReferer
 
     /**
      * When, on mobile, the request come from a mobile app, Amlogin will try to close the popup in js
-     * Resulting on a JS error + blank page because the window does not come from Magento.
+     * Resulting on a JS error + blank page (because of trying to window.close() on new tab from app
      *
-     * In the case of a mobile device, just redirect as in "non popup" mode, in order to avoid blank window
+     * We are not able to be sure that we come from a mobile app, so
+     * in the case of a mobile device, just systematically redirect as in "non popup" mode, in order to avoid blank window
      */
     public function afterExecute(Login $subject, array $result, array $params): array
     {
@@ -40,7 +41,7 @@ class LoginRedirectWhenAppReferer
             $result['isAjax'] = false;
             $result['isSuccess'] = (bool)$responseData['result'];
             $result['messages'] = $responseData['messages'];
-            $result['redirectTo'] = empty($responseData['redirect_data']['url']) ? null : $responseData['redirect_data']['url'];
+            $result['redirectTo'] = $responseData['redirect_data']['url'] ?? null;
         } catch (Exception) {
             return $result;
         }
