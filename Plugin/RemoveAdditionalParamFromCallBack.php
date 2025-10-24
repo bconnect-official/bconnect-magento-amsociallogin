@@ -19,6 +19,6 @@ class RemoveAdditionalParamFromCallBack
         if ($type !== Config::AMASTY_TYPE) {
             return $result;
         }
-        return str_replace(sprintf('/?hauth.done=%s', Config::AMASTY_NAME), '', $result);
+        return rtrim(str_replace(sprintf('/?hauth.done=%s', Config::AMASTY_NAME), '', $result), '/');
     }
 }
