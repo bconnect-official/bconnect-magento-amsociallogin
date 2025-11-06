@@ -19,11 +19,11 @@ class Config
     private const XML_PATH_BCONNECT_ENABLED = 'amsociallogin/bconnect/enabled';
     private const XML_PATH_BCONNECT_PROD_MODE = 'amsociallogin/bconnect/mode_prod';
     private const XML_PATH_BCONNECT_BASE_URL = 'amsociallogin/bconnect/redirect_page_base_url';
+    private const XML_PATH_BCONNECT_BASE_URL_PROD = 'amsociallogin/bconnect/redirect_page_base_url_prod';
     private const XML_PATH_BCONNECT_API_BASE_URL = 'amsociallogin/bconnect/api_base_url';
+    private const XML_PATH_BCONNECT_API_BASE_URL_PROD = 'amsociallogin/bconnect/api_base_url_prod';
     private const XML_PATH_BCONNECT_AUTHORIZE_ENDPOINT = 'amsociallogin/bconnect/authorize_endpoint';
-    private const XML_PATH_BCONNECT_AUTHORIZE_ENDPOINT_PROD = 'amsociallogin/bconnect/authorize_endpoint_prod';
     private const XML_PATH_BCONNECT_ACCESS_TOKEN_ENDPOINT = 'amsociallogin/bconnect/access_token_endpoint';
-    private const XML_PATH_BCONNECT_ACCESS_TOKEN_ENDPOINT_PROD = 'amsociallogin/bconnect/access_token_endpoint_prod';
     private const XML_PATH_BCONNECT_SCOPE = 'amsociallogin/bconnect/scope';
     private const XML_PATH_BCONNECT_CLIENT_ID = 'amsociallogin/bconnect/api_key';
     private const XML_PATH_BCONNECT_SECRET_ID = 'amsociallogin/bconnect/api_secret';
@@ -37,7 +37,7 @@ class Config
     public function getBaseUrl(?string $store = null): ?string
     {
         return $this->config->getValue(
-            self::XML_PATH_BCONNECT_BASE_URL,
+            !$this->isModeProd($store) ? self::XML_PATH_BCONNECT_BASE_URL : self::XML_PATH_BCONNECT_BASE_URL_PROD,
             ScopeInterface::SCOPE_STORE,
             $store,
         );
@@ -45,13 +45,17 @@ class Config
 
     public function getApiBaseUrl(?string $store = null): ?string
     {
-        return $this->config->getValue(self::XML_PATH_BCONNECT_API_BASE_URL, ScopeInterface::SCOPE_STORE, $store);
+        return $this->config->getValue(
+            !$this->isModeProd($store) ? self::XML_PATH_BCONNECT_API_BASE_URL : self::XML_PATH_BCONNECT_API_BASE_URL_PROD,
+            ScopeInterface::SCOPE_STORE,
+            $store,
+        );
     }
 
     public function getAuthorizeEndpoint(?string $store = null): ?string
     {
         return $this->config->getValue(
-            $this->isModeProd() ? self::XML_PATH_BCONNECT_AUTHORIZE_ENDPOINT_PROD : self::XML_PATH_BCONNECT_AUTHORIZE_ENDPOINT,
+            self::XML_PATH_BCONNECT_AUTHORIZE_ENDPOINT,
             ScopeInterface::SCOPE_STORE,
             $store,
         );
@@ -60,7 +64,7 @@ class Config
     public function getAccessTokenEndpoint(?string $store = null): ?string
     {
         return $this->config->getValue(
-            $this->isModeProd() ? self::XML_PATH_BCONNECT_ACCESS_TOKEN_ENDPOINT_PROD : self::XML_PATH_BCONNECT_ACCESS_TOKEN_ENDPOINT,
+            self::XML_PATH_BCONNECT_ACCESS_TOKEN_ENDPOINT,
             ScopeInterface::SCOPE_STORE,
             $store,
         );
