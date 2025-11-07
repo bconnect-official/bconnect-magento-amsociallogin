@@ -34,7 +34,7 @@ class LoginRedirectWhenAppReferer
      */
     public function afterExecute(Login $subject, array $result, array $params): array
     {
-        if (!$this->isBconnectProvider($result, $params) && !$this->isMobile()) {
+        if (!$this->isBconnectProvider($result, $params) || !$this->isMobile()) {
             return $result;
         }
 
