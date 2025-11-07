@@ -302,7 +302,6 @@ class Bconnect extends AbstractAdapter implements AdapterInterface
         return [
             'email' => $decodedPayload['email'] ?? '',
             'firstname' => $decodedPayload['given_name'] ?? '',
-            'given_name' => $decodedPayload['given_name'] ?? '',
             'lastname' => $decodedPayload['family_name'] ?? '',
             'identifier' => $decodedPayload['sub'] ?? '',
             'phone' => $decodedPayload['phone'] ?? '',
