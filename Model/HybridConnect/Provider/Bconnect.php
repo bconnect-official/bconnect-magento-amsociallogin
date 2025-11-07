@@ -90,6 +90,7 @@ class Bconnect extends AbstractAdapter implements AdapterInterface
             $userProfile->email = $jwtCustomerData['email'];
             $userProfile->identifier = $jwtCustomerData['identifier'];
             $userProfile->phone = $jwtCustomerData['phone'];
+            $userProfile->displayName = $userProfile->firstName.' '.$userProfile->lastName;
 
             $postalAddress = explode('|', (string)$jwtCustomerData['postal_address']);
             if ($postalAddress !== []) {
@@ -301,6 +302,7 @@ class Bconnect extends AbstractAdapter implements AdapterInterface
         return [
             'email' => $decodedPayload['email'] ?? '',
             'firstname' => $decodedPayload['given_name'] ?? '',
+            'given_name' => $decodedPayload['given_name'] ?? '',
             'lastname' => $decodedPayload['family_name'] ?? '',
             'identifier' => $decodedPayload['sub'] ?? '',
             'phone' => $decodedPayload['phone'] ?? '',
