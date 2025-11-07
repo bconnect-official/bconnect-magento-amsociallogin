@@ -37,7 +37,7 @@ class Config
     public function getBaseUrl(?string $store = null): ?string
     {
         return $this->config->getValue(
-            !$this->isModeProd($store) ? self::XML_PATH_BCONNECT_BASE_URL : self::XML_PATH_BCONNECT_BASE_URL_PROD,
+            $this->isModeProd($store) ? self::XML_PATH_BCONNECT_BASE_URL_PROD : self::XML_PATH_BCONNECT_BASE_URL,
             ScopeInterface::SCOPE_STORE,
             $store,
         );
@@ -46,7 +46,7 @@ class Config
     public function getApiBaseUrl(?string $store = null): ?string
     {
         return $this->config->getValue(
-            !$this->isModeProd($store) ? self::XML_PATH_BCONNECT_API_BASE_URL : self::XML_PATH_BCONNECT_API_BASE_URL_PROD,
+            $this->isModeProd($store) ? self::XML_PATH_BCONNECT_API_BASE_URL_PROD : self::XML_PATH_BCONNECT_API_BASE_URL,
             ScopeInterface::SCOPE_STORE,
             $store,
         );
