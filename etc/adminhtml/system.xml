@@ -67,7 +67,7 @@
                 </field>
                 <field id="scope" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Scope</label>
-                    <comment>API Scope (add multiple values) - (openid,email,given_name,family_name,name,postaladdress,phone)</comment>
+                    <comment>API Scope (add multiple values) - (openid,email,given_name,family_name,name)</comment>
                     <frontend_model>Bconnect\Amsociallogin\Block\Adminhtml\Form\Field\Scope</frontend_model>
                     <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
                 </field>

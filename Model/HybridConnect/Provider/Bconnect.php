@@ -90,6 +90,7 @@ class Bconnect extends AbstractAdapter implements AdapterInterface
             $userProfile->email = $jwtCustomerData['email'];
             $userProfile->identifier = $jwtCustomerData['identifier'];
             $userProfile->phone = $jwtCustomerData['phone'];
+            $userProfile->displayName = $userProfile->firstName.' '.$userProfile->lastName;
 
             $postalAddress = explode('|', (string)$jwtCustomerData['postal_address']);
             if ($postalAddress !== []) {

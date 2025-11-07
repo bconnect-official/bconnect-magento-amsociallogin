@@ -19,7 +19,7 @@
                 <authorize_endpoint>a/oauth2/authorize</authorize_endpoint>
                 <challenge_method>S256</challenge_method>
                 <access_token_endpoint>sso/v2/oauth2/bconnect/access_token</access_token_endpoint>
-                <scope>{"_1753867042064_64":{"scope_value":"openid"},"_1753867063199_199":{"scope_value":"email"},"_1753867066933_933":{"scope_value":"given_name"},"_1753867070731_731":{"scope_value":"family_name"},"_1753867074239_239":{"scope_value":"name"},"_1754050036962_962":{"scope_value":"postaladdress"},"_1754050040431_431":{"scope_value":"phone"}}</scope>
+                <scope>{"_1753867042064_64":{"scope_value":"openid"},"_1753867063199_199":{"scope_value":"email"},"_1753867066933_933":{"scope_value":"given_name"},"_1753867070731_731":{"scope_value":"family_name"},"_1753867074239_239":{"scope_value":"name"}}</scope>
             </bconnect>
         </amsociallogin>
     </default>
