@@ -17,7 +17,7 @@ class Config
     public const AMASTY_TYPE = 'bconnect';
     public const AMASTY_NAME = 'b.connect';
     private const XML_PATH_BCONNECT_ENABLED = 'amsociallogin/bconnect/enabled';
-    private const XML_PATH_BCONNECT_PROD_MODE = 'amsociallogin/bconnect/mode_prod';
+    private const XML_PATH_BCONNECT_PROD_MODE = 'amsociallogin/bconnect/prod_mode';
     private const XML_PATH_BCONNECT_BASE_URL = 'amsociallogin/bconnect/redirect_page_base_url';
     private const XML_PATH_BCONNECT_BASE_URL_PROD = 'amsociallogin/bconnect/redirect_page_base_url_prod';
     private const XML_PATH_BCONNECT_API_BASE_URL = 'amsociallogin/bconnect/api_base_url';
